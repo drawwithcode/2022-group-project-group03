@@ -1,9 +1,6 @@
-![Title]EMOTION CLOUD<br>
+# EMOTION CLOUD <br>
 
-# MOODboard
-
-**MOODboard** is a project built in p5.js for the course **Creative Coding** at the Politecnico di Milano. <br>
-If you want to know more about the course visit [this website](https://drawwithcode.github.io/2020/).
+**EMOTION CLOUD** is the final project of the Creative Coding course.
 
 ### Faculty
 
@@ -13,13 +10,14 @@ If you want to know more about the course visit [this website](https://drawwithc
 
 ### Team
 
-* [Michele Bruno](https://github.com/michelebruno)
-* [Federica Laurencio](https://federicalaurencio.bss.design/)
-* [Valentina Pallacci](https://www.linkedin.com/in/valentina-pallacci/)
-* [Federico Pozzi](https://federicopozzi.github.io/portfolio/index.html)
+* [Giovanni Benvegnù]()
+* [Mattia Bonanno]()
+* [Lorenzo Cordioli]()
+* [Olimpia Di Via]()
+* [Gioia Stroffolini]()
 
 ### Table of Contents
-0. [How to run](#how-to-run)
+0. [Must Have](#must-have)
 1. [Concept](#concept)
     * Project idea
     * Communication aim
@@ -37,7 +35,8 @@ If you want to know more about the course visit [this website](https://drawwithc
     * ES6 features
 4. [Credits](#credits)
 
-## How to run
+## Must Have+
+In order to run **Emotion Cloud** you must pre-installed [nodejs and npm](https://nodejs.org/)
 
 Be sure to have [node and npm](https://nodejs.org/) installed.
 
