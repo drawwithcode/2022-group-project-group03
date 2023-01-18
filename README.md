@@ -23,17 +23,12 @@
     * Concept 
     * How it works
     * Process
-2. [Design and coding challenges](#Design-and-coding-challenges)
+2. [Coding](#Coding)
     * Face recognition
-      * Coding challenges
-    * Background
-      * Coding challenges
-3. [Miscellaneus](#miscellaneus)
-    * Heroku
-    * CSS
-    * Sharingbutton.io
-    * ES6 features
-4. [Credits](#credits)
+    * Sentiment
+    * Firebase
+    * The Map
+3. [Credits](#credits)
 
 ## Must Have
 
@@ -65,7 +60,9 @@ We use **ml5.sentiment** to detect whether the sentiment of the answer is positi
 ### Process
 
 The experience starts from a QRcode (on mobile phones) which will lead the user to the webcam page and then to the question box. 
-The project is designed to be used by several people at the same time, to do this all the information is stored in a database from which the data will be extrapolated and shown in the final map (usable only from a desktop computer).
+The project is designed to be used by several people at the same time, to do this all the information is stored in a database.
+
+The result is a constantly evolving map where user photos are polarized around the emotion that the AI has identified as prevalent, with a size and arrangement that depend on the intensity of the emotion identified and on the response evaluation. This map is only usable from a desktop computer.
 
 ![Process](/RM_1.png)<br>
 
