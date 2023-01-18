@@ -67,6 +67,8 @@ We use **ml5.sentiment** to detect whether the sentiment of the answer is positi
 The experience starts from a QRcode (on mobile phones) which will lead the user to the webcam page and then to the question box. 
 The project is designed to be used by several people at the same time, to do this all the information is stored in a database from which the data will be extrapolated and shown in the final map (usable only from a desktop computer).
 
+![Process](/RM_1.png)<br>
+
 ## Design and coding challenges
 
 ### Face recognition
