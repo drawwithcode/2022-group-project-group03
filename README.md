@@ -66,7 +66,9 @@ The result is a constantly evolving map where user photos are polarized around t
 
 ![Process](/RM_1.png)<br>
 
-## Design and coding challenges
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Coding
 
 ### Face recognition
 
