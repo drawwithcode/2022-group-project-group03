@@ -22,7 +22,7 @@
     * Brief
     * Concept 
     * How it works
-    * Device
+    * Process
 2. [Design and coding challenges](#Design-and-coding-challenges)
     * Face recognition
       * Coding challenges
@@ -50,32 +50,22 @@ aiming for a quasi-magical experience, we prompt you in exploring the opposite o
 
 ### Concept
 
-Through our interaction, our personalities and digital behaviors we are translated into data that fuels the machine: 
-this data is used as a mean to catalog our interests, behaviors and habits, creating categories of users.
+Through our interaction, our personalities and digital behaviors we are translated into data that fuels the machine: this data is used as a mean to catalog our interests, behaviors and habits, creating categories of users.
 
-Our project, “Emotion Cloud”, wants to put the focus on how bias and stereotypes might influence these algorithms that 
-categorize us, and how we can not confide in their inability to fail.
+Our project, “Emotion Cloud”, wants to put the focus on how bias and stereotypes might influence these algorithms that categorize us, and how we can not confide in their inability to fail.
 
 ### How it works
 
-The goal is to create a platform through which our faces and words are analyzed to create a visual map of how our emotions 
-appear in front of a webcam and how we are categorized by the technology - often in a rough way.
+The goal is to create a platform through which our faces and words are analyzed to create a visual map of how our emotions appear in front of a webcam and how we are categorized by the technology - often in a rough way.
 
 In order to do this, the user must capture a photo of himself thought the webcam. We use **FaceAPI**, particularly the model faceExpression, to detect different emotions by the individuation of different features of the face. The definition of the expression then will lead to a specific categorization, defined by a number which will decide the preponderant emotion on the map.
-After the user has finished on the webcam page, a question will be asked: "How do you feel today?". He must fild a text box with an honest answer
-from which a value will be created that decides the distance between the picture and the emotion’s word.
+After the user has finished on the webcam page, a question will be asked: "How do you feel today?". He must fild a text box with an honest answer from which a value will be created that decides the distance between the picture and the emotion’s word.
 We use **ml5.sentiment** to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
 
-### Context of use
+### Process
 
-This digital experience aims to be used by users in order to **reconnect with their peers** and other anonymous surfers
-through their emotions. Thus enabling them to share and re-connect with each other.
-
-### Device
-
-We preferred to stick to **desktop or landscape mobile** because on portrait mobile the space was not enough for the
-experience. Besides the main frameworks and languages as HTML, CSS, p5.js, and socket.io, we used other libraries to
-achieve our goals, in particular [face-api.js](https://github.com/justadudewhohacks/face-api.js/).
+The experience starts from a QRcode (on mobile phones) which will lead the user to the webcam page and then to the question box. 
+The project is designed to be used by several people at the same time, to do this all the information is stored in a database from which the data will be extrapolated and shown in the final map (usable only from a desktop computer).
 
 ## Design and coding challenges
 
