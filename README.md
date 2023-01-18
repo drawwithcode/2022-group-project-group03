@@ -16,12 +16,12 @@
 * [Olimpia Di Via]()
 * [Gioia Stroffolini]()
 
-### Table of Contents
+### Index
 0. [Must Have](#must-have)
-1. [Concept](#concept)
-    * Project idea
-    * Communication aim
-    * Context of use
+1. [Design](#design)
+    * Brief
+    * Concept 
+    * How it works
     * Device
 2. [Design and coding challenges](#Design-and-coding-challenges)
     * Face recognition
@@ -35,30 +35,36 @@
     * ES6 features
 4. [Credits](#credits)
 
-## Must Have+
-In order to run **Emotion Cloud** you must pre-installed [nodejs and npm](https://nodejs.org/)
+## Must Have
 
-Be sure to have [node and npm](https://nodejs.org/) installed.
+In order to run **Emotion Cloud** you must pre-install [nodejs and npm](https://nodejs.org/)
 
-* Install node dependencies: `npm install`
-* Run local server: `node server.js`
+## Design
 
-## Concept
+### Brief
 
-### Project idea
+**Presence** "In a context in which technology used in design products is rendered invisible and tangible,
+aiming for a quasi-magical experience, we prompt you in exploring the opposite of this."
 
-Users can see an **algorithmic representation** of their expression (neutral, happy, angry, sad, disgusted, surprised,
-fearful) that changes shape and color based on how they are feeling during that time. The representation is updated
-in **real-time**. Every user will be positioned according to their expression, creating **groups** based on shared
-emotion. The background will show a **generative artwork** that changes according to everyone's expression and the
-number of participants.
+**Is there a usage of technology that makes it present, tangible, persistent?**
 
-![Interaction](readme/interaction.gif)<br>
+### Concept
 
-### Communication aim
+Through our interaction, our personalities and digital behaviors we are translated into data that fuels the machine: 
+this data is used as a mean to catalog our interests, behaviors and habits, creating categories of users.
 
-The project was created with the aim of encouraging the user to reflect on the theme of **algorithmic emotions**. The
-main goal is to activate a speculation on the fact that a computer can actually recognise and replicate a human emotion.
+Our project, “Emotion Cloud”, wants to put the focus on how bias and stereotypes might influence these algorithms that 
+categorize us, and how we can not confide in their inability to fail.
+
+### How it works
+
+The goal is to create a platform through which our faces and words are analyzed to create a visual map of how our emotions 
+appear in front of a webcam and how we are categorized by the technology - often in a rough way.
+
+In order to do this, the user must capture a photo of himself thought the webcam. We use **FaceAPI**, particularly the model faceExpression, to detect different emotions by the individuation of different features of the face. The definition of the expression then will lead to a specific categorization, defined by a number which will decide the preponderant emotion on the map.
+After the user has finished on the webcam page, a question will be asked: "How do you feel today?". He must fild a text box with an honest answer
+from which a value will be created that decides the distance between the picture and the emotion’s word.
+We use **ml5.sentiment** to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
 
 ### Context of use
 
