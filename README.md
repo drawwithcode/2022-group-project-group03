@@ -53,8 +53,7 @@ Our project, “Emotion Cloud”, wants to put the focus on how bias and stereot
 
 The goal is to create a platform through which our faces and words are analyzed to create a visual map of how our emotions appear in front of a webcam and how we are categorized by the technology - often in a rough way.
 
-In order to do this, the user must capture a photo of himself thought the webcam. We use **FaceAPI**, particularly the model faceExpression, to detect different emotions by the individuation of different features of the face. The definition of the expression then will lead to a specific categorization, defined by a number which will decide the preponderant emotion on the map.
-After the user has finished on the webcam page, a question will be asked: "How do you feel today?". He must fild a text box with an honest answer from which a value will be created that decides the distance between the picture and the emotion’s word.
+In order to do this, the user must capture a photo of himself thought the webcam. We use **FaceAPI** to detect different emotions by the individuation of different features of the face. 
 We use **ml5.sentiment** to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
 
 ### Process
