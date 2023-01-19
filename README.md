@@ -51,7 +51,9 @@ Our project, “Emotion Cloud”, wants to put the focus on how bias and stereot
 
 ### How it works
 
-The goal is to create a platform through which our faces and words are analyzed to create a visual map of how our emotions appear in front of a webcam and how we are categorized by the technology - often in a rough way.
+The goal is to create a platform through which our faces and words are analyzed to create an emotion visual map of how our expressions appear in front of a webcam and how our words are read by the machine.
+
+It doesn’t matter if the result is true or false, our categorization and catalogation is reality: it’s what happens everyday when we face technology.
 
 In order to do this, the user must capture a photo of himself thought the webcam. We use **FaceAPI** to detect different emotions by the individuation of different features of the face. 
 We use **ml5.sentiment** to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
@@ -61,7 +63,9 @@ We use **ml5.sentiment** to detect whether the sentiment of the answer is positi
 The experience starts from a QRcode (on mobile phones) which will lead the user to the webcam page and then to the question box. 
 The project is designed to be used by several people at the same time, to do this all the information is stored in a database.
 
-The result is a constantly evolving map where user photos are polarized around the emotion that the AI has identified as prevalent, with a size and arrangement that depend on the intensity of the emotion identified and on the response evaluation. This map is only usable from a desktop computer.
+The result is a constantly evolving map where user photos are polarized around the emotion that the machine has identified as prevalent, with a size and arrangement that depend on the intensity of the emotion identified and on the response evaluation. This map is only usable from a desktop computer.
+
+The public can interact with the installation (using their own phone) seeing which category they belong to: if they are happy, sad, neutral, surprised, fearful, angry or disgusted. According to the machine, of course.
 
 ![Process](/RM_1.png)<br>
 
