@@ -47,7 +47,9 @@ aiming for a quasi-magical experience, we prompt you in exploring the opposite o
 
 Through our interaction, our personalities and digital behaviors we are translated into data that fuels the machine: this data is used as a mean to catalog our interests, behaviors and habits, creating categories of users.
 
-Our project, “Emotion Cloud”, wants to put the focus on how bias and stereotypes might influence these algorithms that categorize us, and how we can not confide in their inability to fail.
+Our project, “Emotion Cloud”, wants to put the focus on how bias and stereotypes might influence these algorithms that categorize us, and how we can not confide in their inability to fail. 
+
+The installation wants to explicit the interconnection between reality and machines, unveiling the systems that act behind it.
 
 ### How it works
 
