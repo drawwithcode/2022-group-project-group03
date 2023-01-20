@@ -88,12 +88,12 @@ We use FaceAPI, particularly the model faceExpression, to detect different emot
 Once the value of emotions has been found, they will be used to display the images on the map.
 
 ### General Criticisms
-For this section of the code, the biggest difficulties were handling the data detected by the face API, so that it was then sent in the most correct way to the database. Another important element was the retrieval of data from the database, in order to set the position of the images and the general operations of the system. 
+For this section of the code, the biggest difficulties were related to handling the data detected by the face API, so that it was then sent in the most correct way to the database. Another important element was the retrieval of data from the database, in order to set the position of the images and the general operations of the system. 
 
 
 ### The Code step by step
 
-Thanks to the windowsresized() function, we ensured that the image capture was usable from the phone
+Thanks to the windowsresized() function, we ensured that the image capture was usable from the phone: the responsiveness of the initial sections was important to make the experience as much comfortable as possible for the users.
 
 ```js 
 
@@ -101,25 +101,26 @@ Thanks to the windowsresized() function, we ensured that the image capture was u
 
 ---
 
-Using the NextSection() function, we navigate between the various introductory sections. As we move from one section to the next, we will introduce what the experience will consist of.
+Using the NextSection() function, we navigate between the various introductory sections. As we move from one section to the next, we will introduce what the experience will consist of, making every step of the interaction clear.
 
 ---
 In setup() we configured the webcam, which will be indispensable for capturing expressions with the face API, which we declared in the previous lines.
 
 ---
-The draw function is used to show the live webcam . While takesnap() is used to capture the image.
+The draw function is used to show the live webcam . At the same time, takesnap() is used to capture the image.
 
 ---
-Through these two functions we are able to detect the value of emotions and send them to the database, for each image we will have a value for each of the 7 detected feelings.
+Through these two functions we are able to load the faceApi model before every other action and, after that, to detect the value of emotions and send them to the database: for each image we will have a value for each of the 7 detected feelings.
 
 ---
-Using this last function, we can move on to the last section, which is where we will write the sentence to decetect the sentiment value
+Using this last function, we can move on to the last section, which is where we will write the sentence to detect the sentiment value: this function allows to open a new page associated to an Id, which is necessary to connect to the database and to pair the two pieces of information sent.
 
 ---
 
 ### **Sentiment**
 After the user has finished on the webcam page, a question will be asked: "How do you feel today?". The user then must fill a text box with an honest answer from which a value will be created: this will decide the distance between the picture and the emotion’s word, corresponding to the emotion's "pole". We use ml5.sentiment to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”): since the machine learning system uses a database of words most often used in reviews to determine this value, the link between the written sentence and the actual score is completely arbitrary, but that is precisely the point.
-It's thanks to this model that we are able to attribute a value that will constitute the size of the picture.
+We do not necessarily want people to recognise themselves in the score they are given.
+It's thanks to this model then that we are able to attribute a value that will constitute the size of the picture.
 
 ### General Criticisms
 
@@ -134,20 +135,21 @@ In this section of the code we see how the sentiment model is called and loaded,
 
 ---
 
-Through this function we will move to the section of the map.
+Through this function we will move to the section of the map, which is the final step of the installation project.
 
 ---
 
 ### **Firebase**
 ### General Criticisms
-We decided to use Firebase because it is an open source service, but supported by Google, which allowed us to interface with it via Javascript. Loading the data was intuitive, given the various resources available on the web: the subsequent phase of retrieving and reproposing the data in our code was more critical.
+We decided to use Firebase because it is an open source service, but supported by Google, which allowed us to interface with it via Javascript. Loading the data was intuitive, given the various resources available on the web. The user data was stored in Objects, each one of them consisting of the image (converted in URL), the expressions detections (one score for each emotion that could be identified by the Api), and the sentiment detection score.
+However, the subsequent phase of retrieving and reproposing the data in our code was more critical, due to the connection between database and code. 
 
 ### The Code step by step
 Through the code provided by the platform we connected to the previously configured realtime database.
 
 ---
-
-Once the connection was established we went to create the various folders where the data would be stored.
+ 
+Once the connection was established we went to create the various folders where the data would be stored. 
 
 ---
 ![Process](593.png)
