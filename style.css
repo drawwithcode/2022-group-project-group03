@@ -157,3 +157,15 @@ a {
     align-items: center;
     justify-content: center;
   }
+
+  #qrcode-container {
+    /* position, dimensions */
+    position: fixed;
+    width: 15%;
+    top: 55vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
