@@ -242,7 +242,7 @@ Using this last function, we can move on to the last section, which is where we 
 ---
 
 ### **Sentiment**
-After the user has finished on the webcam page, a question will be asked: "How do you feel today?". The user then must fill a text box with an honest answer from which a value will be created: this will decide the distance between the picture and the emotion’s word, corresponding to the emotion's "pole". We use ml5.sentiment to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”): since the machine learning system uses a database of words most often used in reviews to determine this value, the link between the written sentence and the actual score is completely arbitrary, but that is precisely the point.
+After the user has finished on the webcam page, a question will be asked: "How do you feel today?". The user then must fill a text box with an honest answer from which a value will be created: this will the picture size. We use ml5.sentiment to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”): since the machine learning system uses a database of words most often used in reviews to determine this value, the link between the written sentence and the actual score is completely arbitrary, but that is precisely the point.
 We do not necessarily want people to recognise themselves in the score they are given.
 It's thanks to this model then that we are able to attribute a value that will constitute the size of the picture.
 
