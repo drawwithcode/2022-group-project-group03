@@ -118,12 +118,12 @@ Using this last function, we can move on to the last section, which is where we 
 ---
 
 ### **Sentiment**
-After the user has finished on the webcam page, a question will be asked: "How do you feel today?". He must fild a text box with an honest answer from which a value will be created that decides the distance between the picture and the emotion’s word. We use ml5.sentiment to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
+After the user has finished on the webcam page, a question will be asked: "How do you feel today?". He must fill a text box with an honest answer from which a value will be created that decides the distance between the picture and the emotion’s word. We use ml5.sentiment to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
 Thanks to this model we are able to attribute a value that will constitute the size of the picture.
 
 ### General Criticisms
 
-it was a question of writing the sentence and analyzing its sentiment value, after which we sent the data to the database.
+It was a question of writing the sentence and analyzing its sentiment value, after which we needed to send the data to the database.
 
 ### The Code
 Through the nextsection() function, as in the previous section, we can move between the sentiment detection and the next phase.
