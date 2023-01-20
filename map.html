@@ -5,38 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
 
-    <!--TITLE-->
     <title>EMOTION CLOUD</title>
 
-    <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  
-    <!--JS libraries-->
+    <link rel="stylesheet" type="text/css" href="map.css">
+    
+    
+
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ml5js/Intro-ML-Arts-IMA@ml5-build-10-7-19/ml5_build/ml5.min.js"></script>
     <script src="https://unpkg.com/ml5@0.6.1/dist/ml5.min.js"></script>
-    
-    <!--BACKGROUND ANIMATION-->
-    <script src="home.js"></script>
-    <script src="./firebase/firebase.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
+    
   </head>
 
   <body>
 
-      <!--contents-->
-      <div id="logo-container">
-        <img src="./assets/images/logo.png" alt="logo"/>
-      </div>
-      <div class="container">
-        <div class="home-btns">
-          <a href="start.html">START</a>
-          <a href="map.html">MAP</a>
-          <a href="about.html">ABOUT</a>
-        </div>
-      </div>
     
+ 
+   <div id="navbar-container">
+      <div class="navbar" id="navbar-archive">
+        <a id="home-btn" href="index.html">EMOTION CLOUD</a>
+      </div>
+    </div>
+
+    
+  
+    <div id="canvas">
+    <script src="map.js"></script>
+
+    <div class="footer">
+
+      <div class="key-2"><p>1 zone -> danger zone</p></div>
+      <div class="key-1"><p>pic size -> emotion intensity</p></div>
+      
+     
+     </div>
+    
+    </div>
   </body>
 </html>

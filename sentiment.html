@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EMOTION CLOUD</title>
+
+ <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="start.css">
+
+ <!--p5 libraries-->
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+ <!--ml5 libraries-->
+    <script src="https://cdn.jsdelivr.net/gh/ml5js/Intro-ML-Arts-IMA@ml5-build-10-7-19/ml5_build/ml5.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.6.1/dist/ml5.min.js"></script>
+  
+ <!---fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
+
+    
+    <script src="./firebase/firebase.js"></script>
+  </head>
+
+  <body>
+  
+  <!-----QUESTIONS----->
+      <section class="section show" id="question-container">
+        <div class="container show" id="question-2">
+          
+            <div class="wrapper">
+              <p class="question-text">How do you feel today?</p>
+              <input type="text" id="input-text" placeholder="Be honest."/>
+            </div>
+            
+            <div class="footer">
+              <button class="next-button" onclick="nextSection('F')">next</button>
+            </div>
+        </div>
+
+      <div class="container hide" id="thankyou">
+        <div class="wrapper">
+          <p class="question-text">Thank you. <br> <br> You will find yourself on the screen.</p>
+        </div>
+        <div class="footer">
+        </div>
+      </div>
+      </section>
+
+      <script src="sentiment.js"></script>
+      
+  </body>
+</html>

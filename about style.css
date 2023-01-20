@@ -1,0 +1,124 @@
+
+* {
+    /* dimensioning */
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* fonts */
+    font-family: "Martian Mono";
+    font-weight: normal;
+    /* scrolling */
+    -ms-overflow-style: none; /* (IE and Edge) */
+    scrollbar-width: none; /* (Firefox) */
+  }
+  
+html,
+body {
+   /* position, dimensions */
+    margin: 0;
+    padding: 0;
+    /* styles, colours */
+    color: black;
+    /*fonts*/
+    font-family: "Martian Mono";
+}
+
+
+a {
+    cursor: pointer;
+  }
+
+  
+ #navbar-container {
+    /* position, dimensions */
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    
+  }
+
+  .navbar {
+    /* behavioural settings */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: black;
+  }
+
+  .navbar > a, p {
+    /* position, dimensions */
+    margin: 20px 20px 20px 20px;
+    padding: 0;
+    /*fonts*/
+    font-family: "Martian Mono";
+    font-size: 22px;
+    color: #6EE6D7;
+    text-decoration: none;
+ }
+
+  .navbar-right {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar-right > a, p {
+     /* position, dimensions */
+    margin: 20px 20px 20px 20px;
+    padding: 0;
+     /* behavioural settings */
+    display: flex;
+    flex-direction: row;
+    /*fonts*/
+    font-family: "Martian Mono";
+    font-size: 22px;
+    color: #6EE6D7;
+    text-decoration: none;
+  }
+
+  #about-container {
+    /* position, dimensions */
+    width: 100%;
+    padding: 150px 0px 50px 0;
+    margin: 0px 150px 0px 150px;
+     /* behavioural settings */
+    display: block;
+    /*fonts*/
+    font-size: 16px;
+  }
+
+  #about-content {
+    /* position, dimensions */
+    width: 900px;
+  }
+
+  #about-content > a, p {
+    margin: 0;
+     /* behavioural settings */
+    display: block;
+    color: black;
+  }
+
+  .authors {
+    /* position, dimensions */
+    margin-top: 60px;
+    width: 50%;
+    padding: 0px 0px 100px 0px;
+    float: left;
+    /*fonts*/
+    line-height: 1.5em;
+    font-size: 12px;
+    
+  }
+
+  .authors-title {
+    /* position, dimensions */
+    margin-bottom: 16px;
+    /*fonts*/
+    font-size: 16px;
+    letter-spacing: 0.1em;
+   
+  }
+  
+  
