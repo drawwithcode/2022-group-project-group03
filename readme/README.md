@@ -310,7 +310,6 @@ However, the subsequent phase of retrieving and reproposing the data in our code
 Through the code provided by the platform we connected to the previously configured realtime database.
 ```js 
 async function preload() {
-
   // load firebase app module
   // it will be loaded in a variable called initializeApp
   const fb_app = "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
@@ -339,6 +338,39 @@ const firebaseConfig = {
 Once the connection was established we went to create the various folders where the data would be stored. 
 ```js 
 const app = initializeApp(firebaseConfig);
+  // Initialize Database
+  database = db.getDatabase(app);
+  // The reference to database key where we store data
+  // we use this both for reading and writing
+  scoreRef = db.ref(database, "scores");
+  // define the callback function that will be called when
+  // new data will arrive
+  db.onValue(scoreRef, (data) => {
+   
+    let scores = data.val();
+    for (let k in scores) {
+            img = loadImage(scores[k].image, function(img){
+                    UserData(img, scores[k].expression, scores[k].sentiment);
+  
+            });
+    };
+  });
+}
+
+``` 
+
+
+---
+![Process](593.png)
+
+### **The Map**
+The map is the final output of our project: the users, after the interaction with the system, will have the 7 emotions arranged at equal distances in the screen, and their pictures will be disposed in groups inside the screen space, and their size will be determined by the Sentiment's score.
+In this way, each user is able to see how Face API and Sentiment will arrange and categorise their pictures, seeing if one's state of mind is reflected in the analysis made by the machine, or not.
+
+### The Code step by step
+After setting up and connecting the database, I go to load the image and previously saved data.
+```js 
+const app = initializeApp(firebaseConfig);
 
   // Initialize Database
   database = db.getDatabase(app);
@@ -359,33 +391,97 @@ const app = initializeApp(firebaseConfig);
 });
 
 }
-``` 
-
-
----
-![Process](593.png)
-
-### **The Map**
-The map is the final output of our project: the users, after the interaction with the system, will have the 7 emotions arranged at equal distances in the screen, and their pictures will be disposed in groups inside the screen space, and their size will be determined by the Sentiment's score.
-In this way, each user is able to see how Face API and Sentiment will arrange and categorise their pictures, seeing if one's state of mind is reflected in the analysis made by the machine, or not.
-
-### The Code step by step
-After setting up and connecting the database, I go to load the image and previously saved data.
-```js 
-
 ```
 ---
 In the setup() function we define the size of the canvas and call the background function to create the grid and drawexpressions() for the words of the various 7 sentiments.
+```js
+function setup() {
+
+  let canvasBack = createCanvas (windowWidth, windowHeight);
+  canvasBack.parent("canvas");
+  background(39, 39, 39)
+
+  drawBackground();
+
+}
+
+function draw() {
+
+  drawExpressions();
+  
+}
+```
 
 ---
 With this part of the code, we are able to filter out all the faceAPI values so that we could find the right position for the images on the screen: for each one of them an 'if' statement was created, through which we associate the values of the variables (xcanvasposition, ycanvasposition, dimw, dimh and val) to a specific response based on the expression detected.
 
----
-(codice troppo lungo per lo screen)
-This series of if() instead is used to figure out the size of the image based on the sentiment value.
+```js
+if (angry >= 0.7 && angry <= 1) {
+    xcanvasposition = width / 3;
+    ycanvasposition = height / 1.23;
+    if (
+      angry >= 0.7 &&
+      angry <= 0.89
+    ) {
+      val = 50;
+    }
+    if (
+      angry >= 0.9 &&
+      angry <= 0.95
+    ) {
+      val = 70;
+    }
+    if (angry >= 0.96 && angry <= 1) {
+      val = 90;
+    }
+  } else if (
+    happy >= 0.7 &&
+    happy <= 1
+  ) {
+    xcanvasposition = width / 6;
+    ycanvasposition = height / 2;
+    if (
+      happy >= 0.7 &&
+      happy <= 0.89
+    ) {
+      val = 50;
+    }
+    if (
+      happy >= 0.9 &&
+      happy <= 0.95
+    ) {
+      val = 70;
+    }
+    if (happy >= 0.96 && happy <= 1) {
+      val = 90;
+    }
+  }
+```
 
 ---
+This series of if() instead is used to figure out the size of the image based on the sentiment value.
+```js
+  if (sntm >= 0.71 && sntm <= 1) {
+    dimw = img.width/6.5
+    dimh = img.height/6.5
+    parola = "sicurissimo!"
+  } else if (sntm >= 0.41 && sntm <= 0.7) {
+    dimw = img.width/8
+    dimh = img.height/8
+    parola = "sicuro?"
+  } else if (sntm >= 0.001 && sntm <= 0.4) {
+    dimw = img.width/9.5
+    dimh = img.height/9.5
+    parola = "bah...sarà!"
+  }
+```
+---
 Once all the parameters have been defined, we are finally able to define the position and size of the photo, then display it via the image() function
+ ```js
+  imageMode(CENTER);
+  image(img, xcanvasposition + val * cos(circ), ycanvasposition + val * sin(circ), dimw, dimh)
+  ```
+
 
 ## Credits
 Draw With Code: Creative Coding 2022/2023 
