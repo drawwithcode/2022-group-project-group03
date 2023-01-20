@@ -172,6 +172,8 @@ This series of if() instead is used to figure out the size of the image based on
 ---
 Once all the parameters have been defined, we are finally able to define the position and size of the photo, then display it via the image() function
 
-
+### Credits
+Draw With Code: Creative Coding 2022/2023 
+Politecnico di Milano – Dipartimento di Design
 
 
