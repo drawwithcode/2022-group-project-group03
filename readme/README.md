@@ -362,7 +362,7 @@ const app = initializeApp(firebaseConfig);
 
 
 ---
-![](593.png)
+![](screen_map.png)
 
 ### **The Map**
 The map is the final output of our project: the users, after the interaction with the system, will have the 7 emotions arranged at equal distances in the screen, and their pictures will be disposed in groups inside the screen space, and their size will be determined by the Sentiment's score.
