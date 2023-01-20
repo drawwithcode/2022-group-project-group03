@@ -299,7 +299,7 @@ function setup() {
 
 ---
 
-Through this function we will move to the section of the map, which is the final step of the installation project.
+After this function it'll be possible to see the result of the user interaction directly on the map section, which is accessible both from desktop and the installation projection. 
 
 ---
 
