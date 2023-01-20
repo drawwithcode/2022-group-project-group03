@@ -50,6 +50,8 @@ aiming for a quasi-magical experience, we prompt you in exploring the opposite o
 
 ### Concept
 
+How can we make technology visible if we live in a context in which it is usually intangible and hidden behind its own devices?
+
 Through our interaction, our personalities and digital behaviors we are translated into data that fuels the machine: this data is used as a mean to catalog our interests, behaviors and habits, creating categories of users.
 
 Our project, “Emotion Cloud”, wants to put the focus on how bias and stereotypes might influence these algorithms that categorize us, and how we can not confide in their inability to fail.
