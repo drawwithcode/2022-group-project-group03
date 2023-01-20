@@ -22,7 +22,7 @@ Browse [this website](https://drawwithcode.github.io/) if you want to know more 
 * Gioia Stroffolini
 
 ### Index
-0. [Must Have](#must-have)
+
 1. [Design](#design)
     * Brief
     * Concept 
@@ -35,9 +35,6 @@ Browse [this website](https://drawwithcode.github.io/) if you want to know more 
     * The Map
 3. [Credits](#credits)
 
-## Must Have
-
-In order to run **Emotion Cloud** you must pre-install [nodejs and npm](https://nodejs.org/)
 
 ## Design
 
