@@ -96,24 +96,147 @@ For this section of the code, the biggest difficulties were related to handling 
 Thanks to the windowsresized() function, we ensured that the image capture was usable from the phone: the responsiveness of the initial sections was important to make the experience as much comfortable as possible for the users.
 
 ```js 
-
+function windowResized() {
+  if(windowWidth*1.1 > windowHeight){
+    document.getElementById("phone").style.display = "block";
+  
+  }else{
+    document.getElementById("phone").style.display = "none";
+  }
+}
 ```
 
 ---
 
 Using the NextSection() function, we navigate between the various introductory sections. As we move from one section to the next, we will introduce what the experience will consist of, making every step of the interaction clear.
 
+```js 
+function nextSection(sectionNumber) {
+switch (sectionNumber) {
+    case "A":
+      introAlert1.className = "container hide";
+      setTimeout(() => {
+        introAlert2.className = "container show";
+      }, 750);
+      break;
+    case "B":
+      introAlert2.className = "container hide";
+      setTimeout(() => {
+        introAlert3.className = "container show";
+      }, 750);
+      break;
+    case "C":
+      introAlert3.className = "container hide";
+      setTimeout(() => {
+        introAlert4.className = "container show";
+      }, 750);
+      break;
+    case "D":
+      intro.className = "section hide";
+      introAlert4.className = "container hide";
+        setTimeout(() => {
+          questions.className = "section show";
+          question1.className = "container show";
+        }, 750);
+        break;
+    }
+  }
+```
+
 ---
 In setup() we configured the webcam, which will be indispensable for capturing expressions with the face API, which we declared in the previous lines.
 
+```js 
+function setup() {
+  let canvasWebcam = createCanvas (windowWidth, windowHeight);
+      canvasWebcam.parent("canvas");
+  
+      
+      //webcam
+      video = createCapture(VIDEO);
+      video.hide();
+
+      //declaring what i want to detect through faceapi
+	    const faceOptions = {
+		   withExpression: true,
+		   minConfidence: 0.5
+	    };
+
+      //declaring faceapi
+	    faceapi = ml5.faceApi(video, faceOptions, faceReady);
+
+
+      //creating snapshot from webcam
+	    hold = createImage(video.width, video.height);
+
+    }
+
+```
 ---
 The draw function is used to show the live webcam . At the same time, takesnap() is used to capture the image.
+```js 
+
+function draw() {
+
+     //live camera
+     push();
+     imageMode(CENTER);
+     translate(windowWidth/2, windowHeight/2);
+     scale(-1.4, 1.4);
+     image(video, 0, 0);
+     pop();
+
+    }
+
+      function takeSnap (){
+  
+       video.stop();
+       hold = video.get();
+	     video.loadPixels();
+	     image64 = video.canvas.toDataURL();
+	     faceapi.detect(gotFaces);
+
+    }
+```
 
 ---
 Through these two functions we are able to load the faceApi model before every other action and, after that, to detect the value of emotions and send them to the database: for each image we will have a value for each of the 7 detected feelings.
 
+```js 
+function faceReady() {
+
+      faceapi.detect(gotFaces);
+    
+    }
+
+    //function to detect the expression. then it is sent to the database and an fbkey is generated
+
+    function gotFaces(error, result) {
+    
+      if (error) {
+        console.log(error);
+        return;
+      } 
+      
+      detections = result;
+      console.log(detections[0].expression);
+
+      fbkey = submitScore();
+      
+
+      }
+```
+
 ---
 Using this last function, we can move on to the last section, which is where we will write the sentence to detect the sentiment value: this function allows to open a new page associated to an Id, which is necessary to connect to the database and to pair the two pieces of information sent.
+
+```js 
+  function nextPressed() {
+
+      window.open("sentiment.html?id=" + fbkey, "_self");
+
+    }
+ ```
 
 ---
 
@@ -128,10 +251,49 @@ It was a question of writing the sentence and analyzing its sentiment value, aft
 
 ### The Code
 Through the nextsection() function, as in the previous section, we can move between the sentiment detection and the next phase.
+```js 
+function nextSection(sectionNumber) {
+    switch (sectionNumber) {
+        case "F":
+            getSentiment();
+            question2.className = "container hide";
+          setTimeout(() => {
+            endpage.className = "container show";
+          }, 750);
+          break;
+        }
+      }
+```
 
 ---
 
 In this section of the code we see how the sentiment model is called and loaded, after which we calculated its value using the getSentiment() function. Through submitSentiment() we sent the calculated value to the database
+```js 
+function setup() {
+        //declaring sentiment
+        sentiment = ml5.sentiment('movieReviews', modelReady)
+      }
+
+
+      function modelReady() {
+
+        // model is ready
+        console.log('Model Loaded')
+    
+      }
+ 
+      //function to detect the sentiment of the input phrase. then, it calls the submit function passing the fbkey id and the prediction
+      function getSentiment() {
+
+        let inp = document.getElementById("input-text").value;
+        let prediction = sentiment.predict(inp);
+        console.log(prediction);
+        const Id = window.location.search.split("=")[1]; //ricerca la chiave nell'URL
+        submitSentiment(Id, prediction);
+      
+      }
+
+```
 
 ---
 
@@ -146,10 +308,59 @@ However, the subsequent phase of retrieving and reproposing the data in our code
 
 ### The Code step by step
 Through the code provided by the platform we connected to the previously configured realtime database.
+```js 
+async function preload() {
+
+  // load firebase app module
+  // it will be loaded in a variable called initializeApp
+  const fb_app = "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  const { initializeApp } = await import(fb_app);
+
+  // loading firebase database module
+  // it will be loaded in a variable called "db"
+  const fb_database =
+    "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+  db = await import(fb_database);
+
+  // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyByAlzlIOzZiRjwhm69gf1qmdnyZyXfj6I",
+  authDomain: "emotioncloud-179e1.firebaseapp.com",
+  databaseURL: "https://emotioncloud-179e1-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "emotioncloud-179e1",
+  storageBucket: "emotioncloud-179e1.appspot.com",
+  messagingSenderId: "244977193252",
+  appId: "1:244977193252:web:887555dad3e658e30763b1"
+};
+```
 
 ---
  
 Once the connection was established we went to create the various folders where the data would be stored. 
+```js 
+const app = initializeApp(firebaseConfig);
+
+  // Initialize Database
+  database = db.getDatabase(app);
+  // The reference to database key where we store data
+  // we use this both for reading and writing
+  scoreRef = db.ref(database, "scores");
+  // define the callback function that will be called when
+  // new data will arrive
+  db.onValue(scoreRef, (data) => {
+  
+  let scores = data.val();
+  for (let k in scores) {
+          img = loadImage(scores[k].image, function(img){
+                  UserData(img, scores[k].expression, scores[k].sentiment)
+              
+          });
+  };
+});
+
+}
+``` 
+
 
 ---
 ![Process](593.png)
@@ -160,7 +371,9 @@ In this way, each user is able to see how Face API and Sentiment will arrange an
 
 ### The Code step by step
 After setting up and connecting the database, I go to load the image and previously saved data.
+```js 
 
+```
 ---
 In the setup() function we define the size of the canvas and call the background function to create the grid and drawexpressions() for the words of the various 7 sentiments.
 
