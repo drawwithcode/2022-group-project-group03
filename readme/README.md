@@ -61,9 +61,10 @@ Our project, “Emotion Cloud”, wants to put the focus on how bias and stereot
 The goal is to create a platform through which our faces and words are analyzed to create an emotion visual map of how our expressions appear in front of a webcam and how our words are read by the machine.
 
 It doesn’t matter if the result is true or false, our categorization and catalogation is reality: it’s what happens everyday when we face technology.
+The aim of the project is to be as visually distant from a real restitution of emotions as possible: the user is asked to portray his/her state of mind, but the machine returns something that is more like a pattern, an aseptic system of images and signs, which has nothing to do with the way people are.
 
 In order to do this, the user must capture a photo of himself thought the webcam. We use **FaceAPI** to detect different emotions by the individuation of different features of the face. 
-We use **ml5.sentiment** to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
+Additionally, we use **ml5.sentiment** to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
 
 ### Process
 
@@ -84,11 +85,11 @@ The public can interact with the installation (using their own phone) seeing whi
 
 ### **Face recognition**
 
-We use FaceAPI, particularly the model faceExpression, to detect different emotions by the individuation of different features of the face. The definition of the expression then will lead to a specific categorization, defined by a number which will decide the preponderant emotion on the map.
+We use FaceAPI, particularly the model faceExpression, to detect different emotions by the individuation of different features of the face and their relative position. The definition of the expression, then, will lead to a specific categorization, defined by a number which will decide the preponderant emotion on the map.
 Once the value of emotions has been found, they will be used to display the images on the map.
 
 ### General Criticisms
-For this section of the code, the biggest difficulties were handling the data detected by the face API, so that it was then sent in the most correct way to the database.
+For this section of the code, the biggest difficulties were handling the data detected by the face API, so that it was then sent in the most correct way to the database. Another important element was the retrieval of data from the database, in order to set the position of the images and the general operations of the system. 
 
 
 ### The Code step by step
@@ -118,12 +119,12 @@ Using this last function, we can move on to the last section, which is where we 
 ---
 
 ### **Sentiment**
-After the user has finished on the webcam page, a question will be asked: "How do you feel today?". He must fill a text box with an honest answer from which a value will be created that decides the distance between the picture and the emotion’s word. We use ml5.sentiment to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”).
-Thanks to this model we are able to attribute a value that will constitute the size of the picture.
+After the user has finished on the webcam page, a question will be asked: "How do you feel today?". The user then must fill a text box with an honest answer from which a value will be created: this will decide the distance between the picture and the emotion’s word, corresponding to the emotion's "pole". We use ml5.sentiment to detect whether the sentiment of the answer is positive or negative with a value between 0 (“negative”) and 1 (“positive”): since the machine learning system uses a database of words most often used in reviews to determine this value, the link between the written sentence and the actual score is completely arbitrary, but that is precisely the point.
+It's thanks to this model that we are able to attribute a value that will constitute the size of the picture.
 
 ### General Criticisms
 
-It was a question of writing the sentence and analyzing its sentiment value, after which we needed to send the data to the database.
+It was a question of writing the sentence and analyzing its sentiment value, after which we needed to send the score obtained to the database and then retrieve it to use it as a variable for the pictures.
 
 ### The Code
 Through the nextsection() function, as in the previous section, we can move between the sentiment detection and the next phase.
