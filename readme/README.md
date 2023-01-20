@@ -67,7 +67,7 @@ Additionally, we use **ml5.sentiment** to detect whether the sentiment of the an
 
 ### Process
 
-The experience starts from a QRcode (on mobile phones) which will lead the user to the webcam page and then to the question box, through different sections. The project is designed to be used by several people at the same time: to do this all the information is stored in a database, that collects all the informations from the single devices and makes them available for the use within the system.
+The experience starts from a QRcode (on mobile phones) which will lead the user to the webcam page and then to the question box, through different sections. The project is designed to be used by several people at the same time: to do this all the information are stored in a database, that collects all the data from the single devices and makes them available for the use within the system.
 
 ![](homepage.png)
 
