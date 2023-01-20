@@ -68,12 +68,11 @@ Additionally, we use **ml5.sentiment** to detect whether the sentiment of the an
 
 ### Process
 
-The experience starts from a QRcode (on mobile phones) which will lead the user to the webcam page and then to the question box. 
-The project is designed to be used by several people at the same time, to do this all the information is stored in a database.
+The experience starts from a QRcode (on mobile phones) which will lead the user to the webcam page and then to the question box, through different sections. The project is designed to be used by several people at the same time: to do this all the information is stored in a database, that collects all the informations from the single devices and makes them available for the use within the system.
 
-The result is a constantly evolving map where user photos are polarized around the emotion that the machine has identified as prevalent, with a size and arrangement that depend on the intensity of the emotion identified and on the response evaluation. This map is only usable from a desktop computer.
+The result is a constantly evolving map where users' photos are polarized around the emotion that the machine has identified as prevalent, with a size and arrangement that depend on the intensity of the emotion identified and on the response evaluation. This map is only usable from a desktop computer, since it's designed to be projected on a large screen within an installation whose main theme is the presence of technology.
 
-The public can interact with the installation (using their own phone) seeing which category they belong to: if they are happy, sad, neutral, surprised, fearful, angry or disgusted. According to the machine, of course.
+The public then can interact with the installation (using their own phone) seeing which category they belong to: if they are happy, sad, neutral, surprised, fearful, angry or disgusted. According to the machine, of course.
 
 ![Process](591.png)
 
