@@ -165,7 +165,7 @@ After setting up and connecting the database, I go to load the image and previou
 In the setup() function we define the size of the canvas and call the background function to create the grid and drawexpressions() for the words of the various 7 sentiments.
 
 ---
-With this part of the code, we are able to filter out all face API values so that we can find the right position of the images on the screen.
+With this part of the code, we are able to filter out all the faceAPI values so that we could find the right position for the images on the screen: for each one of them an 'if' statement was created, through which we associate the values of the variables (xcanvasposition, ycanvasposition, dimw, dimh and val) to a specific response based on the expression detected.
 
 ---
 (codice troppo lungo per lo screen)
