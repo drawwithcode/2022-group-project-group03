@@ -54,7 +54,7 @@ Through our interaction, our personalities and digital behaviors we are translat
 
 Our project, “Emotion Cloud”, wants to put the focus on how bias and stereotypes might influence these algorithms that categorize us, and how we can not confide in their inability to fail.
 
-![Process](girl.gif)
+![](girl.gif)
 
 ### How it works
 
@@ -80,7 +80,7 @@ The public then can interact with the installation (using their own phone) seein
 
 ## Coding
 
-![Process](bbt.gif)
+![](bbt.gif)
 
 ### **Face recognition**
 
@@ -142,7 +142,7 @@ switch (sectionNumber) {
     }
   }
 ```
-
+![](schermateStart.png)
 ---
 In setup() we configured the webcam, which will be indispensable for capturing expressions with the face API, which we declared in the previous lines.
 
@@ -361,7 +361,7 @@ const app = initializeApp(firebaseConfig);
 
 
 ---
-![Process](593.png)
+![](593.png)
 
 ### **The Map**
 The map is the final output of our project: the users, after the interaction with the system, will have the 7 emotions arranged at equal distances in the screen, and their pictures will be disposed in groups inside the screen space, and their size will be determined by the Sentiment's score.
