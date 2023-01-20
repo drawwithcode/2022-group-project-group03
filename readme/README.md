@@ -153,8 +153,8 @@ Once the connection was established we went to create the various folders where 
 ![Process](593.png)
 
 ### **The Map**
-The map will be the final output of our project, we will have the 7 sentiments arranged at equal distances in the screen, the pictures will be arranged in groups in space and their size will be determined by sentiment.
-Each user will then be able to see how Face API and Sentiment will arrange and categorise their pictures.
+The map is the final output of our project: the users, after the interaction with the system, will have the 7 emotions arranged at equal distances in the screen, and their pictures will be disposed in groups inside the screen space, and their size will be determined by the Sentiment's score.
+In this way, each user is able to see how Face API and Sentiment will arrange and categorise their pictures, seeing if one's state of mind is reflected in the analysis made by the machine, or not.
 
 ### The Code step by step
 After setting up and connecting the database, I go to load the image and previously saved data.
@@ -172,7 +172,7 @@ This series of if() instead is used to figure out the size of the image based on
 ---
 Once all the parameters have been defined, we are finally able to define the position and size of the photo, then display it via the image() function
 
-### Credits
+## Credits
 Draw With Code: Creative Coding 2022/2023 
 Politecnico di Milano – Dipartimento di Design
 
