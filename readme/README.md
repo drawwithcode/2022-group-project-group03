@@ -369,7 +369,7 @@ The map is the final output of our project: the users, after the interaction wit
 In this way, each user is able to see how Face API and Sentiment will arrange and categorise their pictures, seeing if one's state of mind is reflected in the analysis made by the machine, or not.
 
 ### The Code step by step
-After setting up and connecting the database, I go to load the image and previously saved data.
+After setting up and connecting the database, in the preload function we load all the images and use a callback function to access the previously saved data. 
 ```js 
 const app = initializeApp(firebaseConfig);
 
@@ -394,7 +394,7 @@ const app = initializeApp(firebaseConfig);
 }
 ```
 ---
-In the setup() function we define the size of the canvas and call the background function to create the grid and drawexpressions() for the words of the various 7 sentiments.
+In the setup() function we define the size of the canvas and call the background function to create the grid and drawxEpressions() for the words of the various 7 sentiments.
 ```js
 function setup() {
 
@@ -414,7 +414,7 @@ function draw() {
 ```
 
 ---
-With this part of the code, we are able to filter out all the faceAPI values so that we could find the right position for the images on the screen: for each one of them an 'if' statement was created, through which we associate the values of the variables (xcanvasposition, ycanvasposition, dimw, dimh and val) to a specific response based on the expression detected.
+Through the userData function, called in the callback function in preload, we are able to filter out all the faceAPI values so that we could find the right position for the images on the screen: for each one of them an 'if' statement was created, through which we associate the values of the variables (xcanvasposition, ycanvasposition, dimw, dimh and val) to a specific response based on the expression detected.
 
 ```js
 if (angry >= 0.7 && angry <= 1) {
@@ -477,7 +477,7 @@ This series of if() instead is used to figure out the size of the image based on
   }
 ```
 ---
-Once all the parameters have been defined, we are finally able to define the position and size of the photo, then display it via the image() function
+Once all the parameters have been defined, we are finally able to define the position and size of the photo, then display it via the image() function.
  ```js
   imageMode(CENTER);
   image(img, xcanvasposition + val * cos(circ), ycanvasposition + val * sin(circ), dimw, dimh)
